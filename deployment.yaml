@@ -21,7 +21,7 @@ spec:
       containers:
         - name: datahub
 
-          image: YOUR_DOCKERHUB_USERNAME/datahub:latest
+          image: jibachh/datahub:v1
 
           imagePullPolicy: Always
 
