@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: datahub
+
+  namespace: argocd
+
+spec:
+
+  project: default
+
+  source:
+
+    repoURL: https://github.com/JibachhhMahto764/datahub-manifests.git
+
+    targetRevision: main
+
+    path: .
+
+  destination:
+
+    server: https://kubernetes.default.svc
+
+    namespace: datahub
+
+  syncPolicy:
+
+    automated:
+
+      prune: true
+
+      selfHeal: true
+
+    syncOptions:
+
+      - CreateNamespace=false
